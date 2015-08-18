@@ -19,7 +19,8 @@ class ComputerPlayer
   end
 
 
-  def rate_choices(board, computer_is_x)
+  def rate_choices(board, computer_is_x, depth = 4)
+    #make sure successive calls subtract 1 from it (or don't call if it's 0). 
     rated_choices = {}
     for choice in 1..16
       if board.can_play_at?(choice)
