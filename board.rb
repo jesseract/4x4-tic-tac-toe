@@ -79,7 +79,11 @@ class Board
   end
 
   def can_play_at?(choice)
-    @squares[choice - 1] == nil
+    if choice < 1 || choice > @squares.count
+      return false
+    else
+      @squares[choice - 1] == nil
+    end
   end
 
   def board_with_move(choice)
